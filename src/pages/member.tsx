@@ -1,0 +1,91 @@
+import Dribbble from "../assets/utils/dribbble.svg";
+import Linkedin from "../assets/utils/linkedin.svg";
+import Github from "../assets/utils/github.svg";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import {
+  currentMembers,
+  formerMembers,
+} from "@/data/teamData";
+
+const Member  = () => {
+  return (
+    <section className="py-10">
+      <div className="container flex flex-col items-start text-left">
+        <h2 className="my-6 text-2xl font-bold text-pretty lg:text-4xl">
+          Team Member
+        </h2>
+        </div>
+          <div className="container mt-16 grid gap-x-12 gap-y-16 md:grid-cols-2 lg:grid-cols-4">
+            {currentMembers.map((person) => (
+              <div key={person.id} className="flex flex-col items-start">
+                <Avatar className="mb-4 size-44 md:mb-5 lg:size-52">
+                  <AvatarImage src={person.avatar} />
+                  <AvatarFallback>{person.name}</AvatarFallback>
+                </Avatar>
+                <p className="font-medium">{person.name}</p>
+                <p className="py-3 text-sm text-muted-foreground">
+                  {person.focus}
+                </p>
+                <p className="py-3 text-sm text-muted-foreground">{person.term}</p>
+                <div className="mt-2 flex gap-4">
+                  {person.linkedin && (
+                    <a href={person.linkedin}>
+                      <img src={Linkedin} className="size-5 text-muted-foreground"></img>
+                    </a>
+                  )}
+                  {person.github && (
+                    <a href={person.github}>
+                      <img src={Github} className="size-5 text-muted-foreground"></img>
+                    </a>
+                  )}
+                  {person.dribbble && (
+                    <a href={person.dribbble}>
+                      <img src={Dribbble} className="size-5 text-muted-foreground"></img>
+                    </a>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+      <div className=" mt-24 container flex flex-col items-start text-left">
+        <h2 className="my-6 text-2xl font-bold text-pretty lg:text-4xl">
+          Former Member
+        </h2>
+        </div>
+          <div className="container mt-16 grid gap-x-12 gap-y-16 md:grid-cols-2 lg:grid-cols-4">
+            {formerMembers.map((person) => (
+              <div key={person.id} className="flex flex-col items-start">
+                <Avatar className="mb-4 size-44 md:mb-5 lg:size-52">
+                  <AvatarImage src={person.avatar} />
+                  <AvatarFallback>{person.name}</AvatarFallback>
+                </Avatar>
+                <p className="font-medium">{person.name}</p>
+                <p className="py-3 text-sm text-muted-foreground">
+                  {person.focus}
+                </p>
+                <p className="py-3 text-sm text-muted-foreground">{person.term}</p>
+                <div className="mt-2 flex gap-4">
+                  {person.linkedin && (
+                    <a href={person.linkedin}>
+                      <img src={Linkedin} className="size-5 text-muted-foreground"></img>
+                    </a>
+                  )}
+                  {person.github && (
+                    <a href={person.github}>
+                      <img src={Github} className="size-5 text-muted-foreground"></img>
+                    </a>
+                  )}
+                  {person.dribbble && (
+                    <a href={person.dribbble}>
+                      <img src={Dribbble} className="size-5 text-muted-foreground"></img>
+                    </a>
+                  )}
+                </div>
+              </div>
+            ))}
+        </div>
+    </section>
+  )
+}
+
+export default Member 
