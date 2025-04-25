@@ -42,7 +42,7 @@ interface NavbarProps {
 const Navbar = ({
   logo = {
     url: "https://nus.edu.sg/",
-    src: "public/NUS_logo.jpg",
+    src: "/NUS_logo.jpg",
     alt: "logo",
   },
   menu = [
