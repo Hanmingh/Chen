@@ -42,22 +42,23 @@ interface NavbarProps {
 const Navbar = ({
   logo = {
     url: "https://nus.edu.sg/",
-    src: "/NUS_logo.jpg",
+    src: "NUS_logo.jpg",
     alt: "logo",
   },
   menu = [
-    { title: "Home", url: "/" },
+    //remove # if not HashRoute
+    { title: "Home", url: "#" },
     {
       title: "Members",
-      url: "/member",
+      url: "#/member",
     },
     {
       title: "PRI",
-      url: "/pri",
+      url: "#/pri",
     },
     {
       title: "Events",
-      url: "/events",
+      url: "#/events",
     },
   ],
 }: NavbarProps) => {
