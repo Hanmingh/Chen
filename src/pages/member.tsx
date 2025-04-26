@@ -23,10 +23,10 @@ const Member  = () => {
                   <AvatarFallback>{person.name}</AvatarFallback>
                 </Avatar>
                 <p className="font-medium">{person.name}</p>
-                <p className="py-3 text-sm text-muted-foreground">
+                <p className="py-1 text-sm text-muted-foreground">
                   {person.focus}
                 </p>
-                <p className="py-3 text-sm text-muted-foreground">{person.term}</p>
+                <p className="py-1 text-sm text-muted-foreground">{person.term}</p>
                 <div className="mt-2 flex gap-4">
                   {person.linkedin && (
                     <a href={person.linkedin}>
@@ -60,10 +60,13 @@ const Member  = () => {
                   <AvatarFallback>{person.name}</AvatarFallback>
                 </Avatar>
                 <p className="font-medium">{person.name}</p>
-                <p className="py-3 text-sm text-muted-foreground">
+                {person.company && (
+                  <p className="py-1 text-sm font-bold text-muted-foreground opacity-50">{person.company}</p>
+                )}
+                <p className="py-1 text-sm text-muted-foreground">
                   {person.focus}
                 </p>
-                <p className="py-3 text-sm text-muted-foreground">{person.term}</p>
+                <p className="py-1 text-sm text-muted-foreground">{person.term}</p>
                 <div className="mt-2 flex gap-4">
                   {person.linkedin && (
                     <a href={person.linkedin}>
