@@ -15,9 +15,9 @@ const Member  = () => {
           Team Member
         </h2>
         </div>
-          <div className="container mt-16 grid gap-x-12 gap-y-16 md:grid-cols-2 lg:grid-cols-4">
+          <div className="container mx-auto grid gap-x-20 gap-y-16 grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
             {currentMembers.map((person) => (
-              <div key={person.id} className="flex flex-col items-start">
+              <div key={person.id} className="flex flex-col items-start ">
                 <Avatar className="mb-4 size-44 md:mb-5 lg:size-52">
                   <AvatarImage src={person.avatar} />
                   <AvatarFallback>{person.name}</AvatarFallback>
@@ -47,12 +47,12 @@ const Member  = () => {
               </div>
             ))}
           </div>
-      <div className=" mt-24 container flex flex-col items-start text-left">
+      <div className="mt-24 container flex flex-col items-start text-left">
         <h2 className="my-6 text-2xl font-bold text-pretty lg:text-4xl">
           Former Member
         </h2>
         </div>
-          <div className="container mt-16 grid gap-x-12 gap-y-16 md:grid-cols-2 lg:grid-cols-4">
+          <div className="container mt-16 grid gap-x-12 gap-y-16 grid-cols-1 md:grid-cols-2 xl:grid-cols-4">
             {formerMembers.map((person) => (
               <div key={person.id} className="flex flex-col items-start">
                 <Avatar className="mb-4 size-44 md:mb-5 lg:size-52">

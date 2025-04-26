@@ -139,7 +139,7 @@ export const currentMembers: TeamMember[] = [
         id: "hanming",
         name: "Hanming, Hu",
         term: "2024 Oct –",
-        focus: "Machine Learning, Blockchain",
+        focus: "Machine Learning, Blockchain, Smart Contract",
         avatar: "teams/current/hanming.jpg",
         company: "",
         linkedin:"https://www.linkedin.com/in/hanming-hu/",
@@ -169,7 +169,7 @@ export const formerMembers: TeamMember[] = [
         company: "",
         linkedin: "https://www.linkedin.com/in/maximilian-schicker/",
         github: "",
-        dribbble: "",
+        dribbble: "https://www.schicker.org/",
     },
     {
         id: "vincent",
@@ -400,7 +400,7 @@ export const formerMembers: TeamMember[] = [
         company: "Assistant Professor @ University of Amsterdam",
         linkedin:"https://www.linkedin.com/in/simon-trimborn/",
         github:"",
-        dribbble:"",
+        dribbble:"https://www.simontrimborn.de/home",
     },
     {
         id: "zakiyeva",
