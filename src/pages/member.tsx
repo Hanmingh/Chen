@@ -10,9 +10,9 @@ import {
 const Member  = () => {
   return (
     <section className="py-10">
-      <div className="container flex flex-col items-start text-left">
-        <h2 className="my-6 text-2xl font-bold text-pretty lg:text-4xl">
-          Team Member
+      <div className="container mx-auto flex flex-col items-center text-center">
+        <h2 className="my-6 font-bold text-pretty mb-10">
+          TEAM MEMBERS
         </h2>
         </div>
           <div className="container mx-auto grid gap-x-20 gap-y-16 grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
@@ -47,10 +47,10 @@ const Member  = () => {
               </div>
             ))}
           </div>
-      <div className="mt-24 container flex flex-col items-start text-left">
-        <h2 className="my-6 text-2xl font-bold text-pretty lg:text-4xl">
-          Former Member
-        </h2>
+        <div className="container mx-auto flex flex-col items-center text-center">
+          <h2 className="my-6 font-bold text-pretty mb-10">
+            FORMER MEMBERS
+          </h2>
         </div>
           <div className="container mt-16 grid gap-x-12 gap-y-16 grid-cols-1 md:grid-cols-2 xl:grid-cols-4">
             {formerMembers.map((person) => (
