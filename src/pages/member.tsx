@@ -20,7 +20,7 @@ const Member  = () => {
               <div key={person.id} className="flex flex-col items-start ">
                 <Avatar className="mb-4 size-44 md:mb-5 lg:size-52">
                   <AvatarImage src={person.avatar} />
-                  <AvatarFallback>{person.name}</AvatarFallback>
+                  <AvatarFallback/>
                 </Avatar>
                 <p className="font-medium">{person.name}</p>
                 <p className="py-1 text-sm text-muted-foreground">

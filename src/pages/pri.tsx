@@ -8,6 +8,7 @@ import {
 } from "@/components/ui/table"
 import Papa from 'papaparse';
 import { useEffect, useState } from "react";
+import { Skeleton } from "@/components/ui/skeleton";
 
 interface pri_info {
   Date: string;
@@ -17,6 +18,7 @@ interface pri_info {
 
 const Pri = () => {
   const [info, setInfo] = useState<pri_info[]>([])
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     const csvUrl = 
@@ -28,6 +30,7 @@ const Pri = () => {
       skipEmptyLines: true,
       complete: (result) => {
         setInfo(result.data)
+        setLoading(false)
       },
     })
   }, [])
@@ -48,6 +51,19 @@ const Pri = () => {
           </TableHeader>
           <TableBody>
             {info.map((item) => (
+              <TableRow key={item.Date + item.Presenter}>
+                <TableCell>{item.Date}</TableCell>
+                <TableCell>{item.Presenter}</TableCell>
+                <TableCell className="font-medium">{item.Title}</TableCell>
+              </TableRow>
+            ))}
+            {loading ? Array.from({ length: 3 }).map((_, i) => (
+              <TableRow key={i}>
+                <TableCell><Skeleton className="h-4 w-32" /></TableCell>
+                <TableCell><Skeleton className="h-4 w-48" /></TableCell>
+                <TableCell><Skeleton className="h-4 w-64" /></TableCell>
+              </TableRow>
+             )) : info.map((item) => (
               <TableRow key={item.Date + item.Presenter}>
                 <TableCell>{item.Date}</TableCell>
                 <TableCell>{item.Presenter}</TableCell>
