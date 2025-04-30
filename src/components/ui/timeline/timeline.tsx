@@ -370,7 +370,6 @@ TimelineTitle.displayName = 'TimelineTitle';
 const TimelineIcon = ({
   icon,
   color = 'primary',
-  status = 'completed',
   iconSize = 'md',
 }: {
   icon?: React.ReactNode;
