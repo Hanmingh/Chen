@@ -80,11 +80,11 @@ Timeline.displayName = 'Timeline';
  * @interface TimelineItemProps
  * @extends {Omit<HTMLMotionProps<"li">, "ref">}
  */
-interface TimelineItemProps extends Omit<HTMLMotionProps<'li'>, 'ref'> {
+interface TimelineItemProps extends Omit<HTMLMotionProps<'li'>, 'ref'| 'title'> {
   /** Date string for the timeline item */
   date?: string;
   /** Title of the timeline item */
-  title?: string;
+  title?: React.ReactNode;
   /** Description text */
   description?: string;
   /** Custom icon element */
@@ -103,6 +103,8 @@ interface TimelineItemProps extends Omit<HTMLMotionProps<'li'>, 'ref'> {
   loading?: boolean;
   /** Error message */
   error?: string;
+  /** Error message */
+  link?: string;
 }
 
 const TimelineItem = React.forwardRef<HTMLLIElement, TimelineItemProps>(
@@ -120,6 +122,7 @@ const TimelineItem = React.forwardRef<HTMLLIElement, TimelineItemProps>(
       iconsize,
       loading,
       error,
+      link,
       // Omit unused Framer Motion props
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
       initial,
@@ -356,7 +359,7 @@ const TimelineTitle = React.forwardRef<
 >(({ className, children, ...props }, ref) => (
   <h3
     ref={ref}
-    className={cn('font-semibold leading-none tracking-tight text-secondary-foreground', className)}
+    className={cn('text-base font-semibold leading-normal tracking-tight text-secondary-foreground', className)}
     {...props}
   >
     {children}
