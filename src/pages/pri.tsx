@@ -50,13 +50,6 @@ const Pri = () => {
             </TableRow>
           </TableHeader>
           <TableBody>
-            {info.map((item) => (
-              <TableRow key={item.Date + item.Presenter}>
-                <TableCell>{item.Date}</TableCell>
-                <TableCell>{item.Presenter}</TableCell>
-                <TableCell className="font-medium">{item.Title}</TableCell>
-              </TableRow>
-            ))}
             {loading ? Array.from({ length: 3 }).map((_, i) => (
               <TableRow key={i}>
                 <TableCell><Skeleton className="h-4 w-32" /></TableCell>
