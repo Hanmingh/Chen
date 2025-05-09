@@ -10,6 +10,13 @@ export interface event {
   
 export const events: event[] = [
     {
+        id: 32,
+        title: "13th World Congress of the Bachelier Finance Society",
+        description: "Bologna, Italy",
+        date: "29 Jun 2026 – 3 July 2026",
+        link: "https://www.bacheliercongress.com/2026/"
+    },
+    {
         id: 31,
         title: "IASC-ARS2025",
         description: "University of Economics Ho Chi Minh City, Vietnam",

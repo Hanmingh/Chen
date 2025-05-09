@@ -150,6 +150,7 @@ const Home = () => {
           <section>
             <h2 className="text-2xl font-bold mb-4">Publications</h2>
             <ol className="list-decimal text-sm text-muted-foreground list-inside space-y-2">
+              <li>Zhou, L., Chen, Y., Peng, H. and Koch, T. (2025), Is Innovation Slowing Down? Insights from the AIMS Framework of Patent Values. Accepted by Expert Systems With Applications.</li>
               <li>Chen, Y., Grith, M. and Lai, H. (2024), Neural Tangent Kernel in Implied Volatility Forecasting: A Nonlinear Functional Autoregression Approach. Accepted by Journal of Business & Economic Statistics.</li>
               <li>Trimborn, S., Peng, H. and Chen, Y. (2024). Influencer detection meets network autoregression — Influential regions in the bitcoin blockchain, Journal of Empirical Finance, Volume 78, 101529, ISSN 0927-5398, <a
                   href="https://doi.org/10.1016/j.jempfin.2024.101529"
