@@ -1,5 +1,5 @@
 import './App.css'
-import { BrowserRouter, HashRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Home from './pages/home'
 import Events from './pages/events'
 import Member from './pages/member'
