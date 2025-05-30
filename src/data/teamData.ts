@@ -89,7 +89,7 @@ export const currentMembers: TeamMember[] = [
         company: "",
         linkedin:"",
         github:"",
-        dribbble:"",
+        dribbble:"https://sites.google.com/view/leizhou",
     },
     {
         id: "hoa",
@@ -156,6 +156,17 @@ export const currentMembers: TeamMember[] = [
         linkedin:"",
         github:"",
         dribbble:"",
+    },
+    {
+        id: "arshia",
+        name: "Arshia, Feizmohammady",
+        term: "2025 May –",
+        focus: "Machine Learning for energy Forecasting",
+        avatar: "teams/current/arshia.jpg",
+        company: "",
+        linkedin:"https://www.linkedin.com/in/Arshiafeiz",
+        github:"",
+        dribbble:"https://arshiafeizmohammady.com",
     },
 ];
   
