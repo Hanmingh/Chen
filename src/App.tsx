@@ -7,7 +7,6 @@ import Pri from './pages/pri'
 import { Navbar } from './components/navbar'
 
 function App() {
-
   return (
     <HashRouter>
       <div className="w-[80%] lg:w-[60%] mx-auto">
