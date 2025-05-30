@@ -21,7 +21,6 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
-import { Link } from "react-router-dom";
 
 interface MenuItem {
   title: string;
@@ -48,18 +47,18 @@ const Navbar = ({
   },
   menu = [
     //remove # if not HashRoute
-    { title: "Home", url: "/" },
+    { title: "Home", url: "#" },
     {
       title: "Members",
-      url: "member",
+      url: "#/member",
     },
     {
       title: "PRI",
-      url: "pri",
+      url: "#/pri",
     },
     {
       title: "Events",
-      url: "events",
+      url: "#/events",
     },
   ],
 }: NavbarProps) => {
@@ -140,13 +139,11 @@ const renderMenuItem = (item: MenuItem) => {
 
   return (
     <NavigationMenuItem key={item.title}>
-      <NavigationMenuLink asChild>
-        <Link
-          to={item.url}
-          className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-muted hover:text-accent-foreground"
-        >
-          {item.title}
-        </Link>
+      <NavigationMenuLink
+        href={item.url}
+        className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-muted hover:text-accent-foreground"
+      >
+        {item.title}
       </NavigationMenuLink>
     </NavigationMenuItem>
   );
@@ -169,17 +166,17 @@ const renderMobileMenuItem = (item: MenuItem) => {
   }
 
   return (
-    <Link to={item.url} className="text-md font-semibold">
+    <a key={item.title} href={item.url} className="text-md font-semibold">
       {item.title}
-    </Link>
+    </a>
   );
 };
 
 const SubMenuLink = ({ item }: { item: MenuItem }) => {
   return (
-    <Link
-      to={item.url}
+    <a
       className="flex flex-row gap-4 rounded-md p-3 leading-none no-underline transition-colors outline-none select-none hover:bg-muted hover:text-accent-foreground"
+      href={item.url}
     >
       <div className="text-foreground">{item.icon}</div>
       <div>
@@ -190,7 +187,7 @@ const SubMenuLink = ({ item }: { item: MenuItem }) => {
           </p>
         )}
       </div>
-    </Link>
+    </a>
   );
 };
 
