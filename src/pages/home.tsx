@@ -95,12 +95,12 @@ const Home = () => {
                 market making; crypto blockchains
               </li>
               <li>
-                time series analysis: nonstationary & functional time series;
+                Time series analysis: nonstationary & functional time series;
                 networks & spatial-temporal data
               </li>
-              <li>energy data analytics: modeling and forecasting</li>
+              <li>Energy data analytics: modeling and forecasting</li>
               <li>
-                data-oriented analytics in precision medicine, citation analysis
+                Data-oriented analytics in precision medicine, citation analysis
                 & research metrics, patent valuation, explainable AI
               </li>
             </ul>
@@ -113,7 +113,6 @@ const Home = () => {
               <li>B.Sc. in Economics (1998) Renmin University of China 中国⼈民⼤学, China</li>
               <li>M.A. in Economics and Management Science (2002) Humboldt-Universität zu Berlin, Germany</li>
               <li>M.Sc. in Statistics (2005) Humboldt-Universität zu Berlin and Freie Universität Berlin, Germany</li>
-              <li>energy data analytics: modeling and forecasting</li>
               <li>Ph.D. in Statistics (2007) Summa Cum Laude Humboldt-Universität zu Berlin. Supervisors: 
                 Prof. Dr. Wolfgang Härdle (Humboldt-Universität zu Berlin, haerdle@wiwi.hu-berlin.de) and Prof. Dr. Vladimir Spokoiny 
                 (Weierstraß-Institut für Angewandte Analysis und Stochastik, spokoiny@wias-berlin.de)</li>
