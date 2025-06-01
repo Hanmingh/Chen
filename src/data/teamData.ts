@@ -158,6 +158,17 @@ export const currentMembers: TeamMember[] = [
         dribbble:"",
     },
     {
+        id: "aline",
+        name: "Aline Janvier",
+        term: "2025 Feb –",
+        focus: "Bunker fuel forecasting, News sentiment analysis, Portfolio optimization",
+        avatar: "teams/current/aline.jpg",
+        company: "",
+        linkedin:"https://www.linkedin.com/in/alinejanv/",
+        github:"",
+        dribbble:"",
+    },
+    {
         id: "arshia",
         name: "Arshia, Feizmohammady",
         term: "2025 May –",
