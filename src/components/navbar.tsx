@@ -50,6 +50,10 @@ const Navbar = ({
     //remove # if not HashRoute
     { title: "Home", url: "/" },
     {
+      title: "Research",
+      url: "/research",
+    },
+    {
       title: "Members",
       url: "/member",
     },

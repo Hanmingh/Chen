@@ -4,6 +4,7 @@ import Home from './pages/home'
 import Events from './pages/events'
 import Member from './pages/member'
 import Pri from './pages/pri'
+import Research from './pages/research'
 import { Navbar } from './components/navbar'
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
         <Navbar/>
         <Routes>
           <Route path="/" element={<Home/>} />
+          <Route path="/research" element={<Research/>} />
           <Route path="/events" element={<Events/>} />
           <Route path="/member" element={<Member/>} />
           <Route path="/pri" element={<Pri/>} />
