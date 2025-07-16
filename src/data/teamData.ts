@@ -125,17 +125,6 @@ export const currentMembers: TeamMember[] = [
         dribbble:"",
     },
     {
-        id: "paolo",
-        name: "Paolo, Recchia",
-        term: "2024 Oct –",
-        focus: "Quantum Finance",
-        avatar: "teams/current/paolo.jpg",
-        company: "",
-        linkedin:"https://www.linkedin.com/in/paolo-recchia-a2054a16b/",
-        github:"",
-        dribbble:"",
-    },
-    {
         id: "hanming",
         name: "Hanming, Hu",
         term: "2024 Oct –",
@@ -168,20 +157,31 @@ export const currentMembers: TeamMember[] = [
         github:"",
         dribbble:"",
     },
+];
+  
+export const formerMembers: TeamMember[] = [
     {
         id: "arshia",
         name: "Arshia, Feizmohammady",
-        term: "2025 May –",
+        term: "2025 May – 2025 Jul",
         focus: "Machine Learning for energy Forecasting",
-        avatar: "teams/current/arshia.jpg",
+        avatar: "teams/former/arshia.jpg",
         company: "",
         linkedin:"https://www.linkedin.com/in/Arshiafeiz",
         github:"",
         dribbble:"https://arshiafeizmohammady.com",
     },
-];
-  
-export const formerMembers: TeamMember[] = [
+    {
+        id: "paolo",
+        name: "Paolo, Recchia",
+        term: "2024 Oct – 2025 Jun",
+        focus: "Quantum Finance",
+        avatar: "teams/former/paolo.jpg",
+        company: "",
+        linkedin:"https://www.linkedin.com/in/paolo-recchia-a2054a16b/",
+        github:"",
+        dribbble:"",
+    },
     {
         id: "maximilian",
         name: "Maximilian, Schicker",
