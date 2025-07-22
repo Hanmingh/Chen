@@ -36,7 +36,7 @@ const Pri = () => {
   }, [])
 
   return (
-    <section className="py-10">
+    <section className="py-10 w-[80%] lg:w-[60%] mx-auto">
       <div>
         <h2 className="my-6 font-bold text-pretty mb-10 items-center text-center">
           PRIVATISSIMUM

@@ -1,6 +1,6 @@
 const Home = () => {
   return (
-    <section className="py-10">
+    <section className="py-10 w-[80%] lg:w-[60%] mx-auto">
       <div className="container mx-auto px-4 py-8 flex flex-col md:flex-row gap-8">
         {/* sidebar */}
         <aside className="md:w-1/5 flex-shrink-0">

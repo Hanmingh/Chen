@@ -9,7 +9,7 @@ import {
 
 const Member  = () => {
   return (
-    <section className="py-10">
+    <section className="py-10 w-[80%] lg:w-[60%] mx-auto">
       <div className="container mx-auto flex flex-col items-center text-center">
         <h2 className="my-6 font-bold text-pretty mb-10">
           TEAM MEMBERS

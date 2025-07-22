@@ -69,7 +69,7 @@ const Navbar = ({
 }: NavbarProps) => {
   return (
     <section className="py-4 sticky top-0 z-50 bg-white">
-      <div className="container">
+      <div className="container w-[80%] lg:w-[60%] mx-auto">
         {/* Desktop Menu */}
         <nav className="hidden justify-between lg:flex">
           <div className="flex items-center gap-6">

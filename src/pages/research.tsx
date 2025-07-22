@@ -1,6 +1,9 @@
+import { Card, CardHeader, CardTitle, CardContent, CardDescription, CardFooter } from "@/components/ui/card";
+import { Link } from "react-router-dom";
+
 const Research = () => {
   return (
-    <section className="py-10">
+    <section className="py-10 w-[80%] lg:w-[60%] mx-auto">
       <div className="container mx-auto px-4 py-8">
         <h1 className="text-3xl font-bold mb-8 text-center">Research</h1>
         
@@ -25,6 +28,34 @@ const Research = () => {
                 & research metrics, patent valuation, explainable AI
               </li>
             </ul>
+          </section>
+
+          {/* Active Projects */}
+          <section>
+            <h2 className="text-2xl font-bold mb-4 mt-10">Active Projects</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {[
+                {
+                  title: 'Fuelture',
+                  description: 'Quantum-Ready AI-Powered Bunker Procurement for SME Shipping Companies ',
+                  link: '/research/fuelture'
+                },
+              ].map((project, idx) => (
+                <Card key={idx}>
+                  <CardHeader>
+                    <CardTitle>{project.title}</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <CardDescription>{project.description}</CardDescription>
+                  </CardContent>
+                  <CardFooter>
+                    <Link to={`${project.link}`} className="text-blue-600 hover:underline text-sm">
+                        Learn more
+                    </Link>
+                </CardFooter>
+                </Card>
+              ))}
+            </div>
           </section>
 
           {/* Publications */}
