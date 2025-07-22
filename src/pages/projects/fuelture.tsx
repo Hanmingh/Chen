@@ -1,5 +1,6 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Card, CardContent } from "@/components/ui/card";
+import { Brain, Settings, Cloud, Cpu, CheckCircle } from "lucide-react";
 
 const teamMembers = [
   {
@@ -49,7 +50,7 @@ const stats = [
     label: 'Average Annual Savings Per Fleet',
   },
   {
-    value: '98.5%',
+    value: '99%',
     label: 'Prediction Accuracy in Price Forecasting',
   },
 ];
@@ -57,186 +58,148 @@ const stats = [
 const features = [
   {
     title: 'Real-Time AI Forecasting',
-    description: '• 99% accuracy (1-day forecast)\n• 93% accuracy (30-day forecast)',
-    icon: '🔮'
+    description: ['99% accuracy (1-day forecast)', '93% accuracy (30-day forecast)'],
+    icon: Brain
   },
   {
     title: 'Automated Bunker Optimization',
-    description: '• Best timing for fuel procurement\n• Hedging strategies to minimize fuel price risks\n• Optimal bunker port selection\n• Optimal fuel order quantity',
-    icon: '⚡'
+    description: ['Best timing for fuel procurement', 'Hedging strategies to minimize fuel price risks', 'Optimal bunker port selection', 'Optimal fuel order quantity'],
+    icon: Settings
   },
   {
     title: 'Cloud-Based, SaaS Model',
-    description: '• No need for in-house expertise\n• Easily scalable and accessible to the users',
-    icon: '☁️'
+    description: ['No need for in-house expertise', 'Easily scalable and accessible to the users'],
+    icon: Cloud
   },
   {
     title: 'Quantum Ready Algorithms',
-    description: '• Designed to handle large-scale, complex, and multi-objective optimization problems under uncertainties\n• Quantum-safe solutions, ensuring our technology remains secure and future-proof in an evolving computational landscape',
-    icon: '🚀'
+    description: ['Designed to handle large-scale, complex, and multi-objective optimization problems under uncertainties', 'Quantum-safe solutions, ensuring our technology remains secure and future-proof in an evolving computational landscape'],
+    icon: Cpu
   }
 ];
 
 const Fuelture = () => {
   return (
-    <main style={{ fontFamily: 'system-ui, -apple-system, sans-serif', background: '#f8fafc', color: '#1e293b' }}>
+    <main className="font-sans bg-slate-50 text-slate-800">
       {/* Hero Section */}
-      <section style={{ 
-        background: 'linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 41, 59, 0.9) 100%)', 
-        color: '#fff', 
-        textAlign: 'center', 
-        padding: '8rem 2rem', 
-        backgroundImage: 'url(https://blog.nus.edu.sg/matcheny/files/2024/11/venture_02.png)', 
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        position: 'relative'
-      }}>
-        <div style={{ position: 'relative', zIndex: 2, maxWidth: '1200px', margin: '0 auto' }}>
-          <div style={{ fontSize: '1.1rem', fontWeight: 600, color: '#60a5fa', marginBottom: '1rem', letterSpacing: '0.05em' }}>
+      <section className="relative text-white text-center py-40 px-8 bg-cover bg-center" style={{ backgroundImage: 'url(/projects/container_1.jpg)' }}>
+        <div className="absolute inset-0 bg-black/60"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-900/50 to-slate-700/50"></div>
+        <div className="relative z-10 max-w-6xl mx-auto">
+          <div className="font-semibold text-blue-400 mb-4 tracking-wider">
             FUELTURE TECHNOLOGIES
           </div>
-          <h1 style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)', fontWeight: 800, marginBottom: '1.5rem', lineHeight: 1.1 }}>
+          <h1 className="font-extrabold mb-6 leading-tight">
             Next-Generation Bunker Procurement Platform
           </h1>
-          <p style={{ fontSize: '1.25rem', marginBottom: '3rem', maxWidth: '800px', margin: '0 auto 3rem', lineHeight: 1.6, color: '#e2e8f0' }}>
+          <p className="mb-12 max-w-4xl mx-auto leading-relaxed text-slate-200">
             Revolutionizing maritime fuel procurement through AI-powered forecasting, quantum-ready optimization, and real-time market intelligence
           </p>
-          <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
-            <a href="#" style={{ 
-              background: 'linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%)', 
-              color: '#fff', 
-              padding: '1rem 2.5rem', 
-              borderRadius: '0.5rem', 
-              textDecoration: 'none', 
-              fontWeight: 700,
-              fontSize: '1.1rem',
-              transition: 'all 0.3s ease',
-              boxShadow: '0 4px 15px rgba(59, 130, 246, 0.4)'
-            }}>
+          <div className="flex gap-4 justify-center flex-wrap">
+            <a href="#" className="bg-gradient-to-r from-blue-600 to-blue-800 text-white px-10 py-4 rounded-lg no-underline font-bold transition-all duration-300 shadow-lg shadow-blue-600/40 hover:shadow-xl hover:shadow-blue-600/50 hover:scale-105">
               Request Demo
-            </a>
-            <a href="#" style={{ 
-              border: '2px solid #fff', 
-              color: '#fff', 
-              padding: '1rem 2.5rem', 
-              borderRadius: '0.5rem', 
-              textDecoration: 'none', 
-              fontWeight: 700,
-              fontSize: '1.1rem',
-              transition: 'all 0.3s ease'
-            }}>
-              Learn More
             </a>
           </div>
         </div>
       </section>
 
       {/* What We Do, Our Approach, Our Mission */}
-      <section style={{ background: '#f8fafc', padding: '6rem 2rem' }}>
-        <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '4rem' }}>
-            <div style={{ display: 'flex', gap: '2rem' }}>
-              <div style={{ 
-                fontSize: '3rem', 
-                fontWeight: 900, 
-                color: '#3b82f6', 
-                lineHeight: 1,
-                minWidth: '80px'
-              }}>01</div>
-              <div>
-                <h3 style={{ fontSize: '1.8rem', fontWeight: 800, color: '#1e293b', marginBottom: '1.5rem' }}>
+      <section className="bg-slate-50 py-16 px-8">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+            <div>
+              <div className="flex items-center gap-4 mb-4">
+                <div className="text-4xl font-black text-blue-600 leading-none">01</div>
+                <h3 className="text-xl font-extrabold text-slate-800">
                   What We Do
                 </h3>
-                <p style={{ fontSize: '1.1rem', lineHeight: 1.7, color: '#64748b' }}>
-                  The shipping industry faces volatile fuel markets and the urgent need for efficient, sustainable fuel procurement. Our AI-driven solution empowers decision-makers with accurate forecasting, optimization strategies, and transparent insights to manage costs, reduce risks, and achieve a competitive advantage in an increasingly complex maritime environment.
-                </p>
               </div>
+              <p className="leading-relaxed text-slate-600">
+                The shipping industry faces volatile fuel markets and the urgent need for efficient, sustainable fuel procurement. Our AI-driven solution empowers decision-makers with accurate forecasting, optimization strategies, and transparent insights to manage costs, reduce risks, and achieve a competitive advantage in an increasingly complex maritime environment.
+              </p>
             </div>
 
-            <div style={{ display: 'flex', gap: '2rem' }}>
-              <div style={{ 
-                fontSize: '3rem', 
-                fontWeight: 900, 
-                color: '#10b981', 
-                lineHeight: 1,
-                minWidth: '80px'
-              }}>02</div>
-              <div>
-                <h3 style={{ fontSize: '1.8rem', fontWeight: 800, color: '#1e293b', marginBottom: '1.5rem' }}>
+            <div>
+              <div className="flex items-center gap-4 mb-4">
+                <div className="text-4xl font-black text-emerald-600 leading-none">02</div>
+                <h3 className="text-xl font-extrabold text-slate-800">
                   Our Approach
                 </h3>
-                <p style={{ fontSize: '1.1rem', lineHeight: 1.7, color: '#64748b' }}>
-                  Our Fuelture platform delivers precise bunker fuel price forecasts to optimize bunker port selection, nomination timing, and refueling locations. Engineered for scalability and quantum-readiness, our advanced algorithms support multi-period and multi-objective planning while adapting to real-time market conditions.
-                </p>
               </div>
+              <p className="leading-relaxed text-slate-600">
+                Our Fuelture platform delivers precise bunker fuel price forecasts to optimize bunker port selection, nomination timing, and refueling locations. Engineered for scalability and quantum-readiness, our advanced algorithms support multi-period and multi-objective planning while adapting to real-time market conditions.
+              </p>
             </div>
 
-            <div style={{ display: 'flex', gap: '2rem' }}>
-              <div style={{ 
-                fontSize: '3rem', 
-                fontWeight: 900, 
-                color: '#f59e0b', 
-                lineHeight: 1,
-                minWidth: '80px'
-              }}>03</div>
-              <div>
-                <h3 style={{ fontSize: '1.8rem', fontWeight: 800, color: '#1e293b', marginBottom: '1.5rem' }}>
+            <div>
+              <div className="flex items-center gap-4 mb-4">
+                <div className="text-4xl font-black text-amber-600 leading-none">03</div>
+                <h3 className="text-xl font-extrabold text-slate-800">
                   Our Mission
                 </h3>
-                <p style={{ fontSize: '1.1rem', lineHeight: 1.7, color: '#64748b' }}>
-                  We provide real-time, explainable insights into the complex factors affecting fuel pricing and procurement decisions. Our mission is to secure significant cost savings and improved operational efficiency while enabling sustainable maritime operations through intelligent, data-driven fuel procurement strategies.
-                </p>
               </div>
+              <p className="leading-relaxed text-slate-600">
+                We provide real-time, explainable insights into the complex factors affecting fuel pricing and procurement decisions. Our mission is to secure significant cost savings and improved operational efficiency while enabling sustainable maritime operations through intelligent, data-driven fuel procurement strategies.
+              </p>
             </div>
           </div>
         </div>
       </section>
 
       {/* Features Section */}
-      <section style={{ background: '#fff', padding: '6rem 2rem' }}>
-        <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-          <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
-            <h2 style={{ fontSize: '2.5rem', fontWeight: 800, color: '#1e293b', marginBottom: '1rem' }}>
+      <section className="bg-white py-16 px-8">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl md:text-4xl font-extrabold text-slate-800 mb-2">
               Advanced AI Solutions for Maritime Fuel Management
             </h2>
-            <p style={{ fontSize: '1.1rem', color: '#64748b', maxWidth: '600px', margin: '0 auto' }}>
-              Leverage cutting-edge technology to optimize your bunker procurement strategy and achieve unprecedented cost savings
-            </p>
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '2rem' }}>
-            {features.map((feature, index) => (
-              <Card key={index} style={{ padding: '2rem', textAlign: 'center', border: '1px solid #e2e8f0', borderRadius: '1rem', transition: 'all 0.3s ease' }}>
-                <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>{feature.icon}</div>
-                <h3 style={{ fontSize: '1.3rem', fontWeight: 700, color: '#1e293b', marginBottom: '1rem' }}>{feature.title}</h3>
-                <div style={{ color: '#64748b', lineHeight: 1.6, textAlign: 'left', whiteSpace: 'pre-line' }}>{feature.description}</div>
-              </Card>
-            ))}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {features.map((feature, index) => {
+              const IconComponent = feature.icon;
+              return (
+                <Card key={index} className="p-6 border border-slate-200 rounded-2xl transition-all duration-300 hover:shadow-lg hover:shadow-blue-100">
+                  <div className="flex items-center gap-4 mb-4">
+                    <IconComponent className="w-8 h-8 text-blue-600 flex-shrink-0" />
+                    <h4 className="font-bold text-slate-800 text-lg">{feature.title}</h4>
+                  </div>
+                  <div className="text-slate-600 leading-relaxed text-left space-y-2">
+                    {feature.description.map((item, itemIndex) => (
+                      <div key={itemIndex} className="flex items-start gap-3">
+                        <CheckCircle className="w-4 h-4 text-green-600 mt-1 flex-shrink-0" />
+                        <span className="text-sm">{item}</span>
+                      </div>
+                    ))}
+                  </div>
+                </Card>
+              );
+            })}
           </div>
         </div>
       </section>
 
       {/* About Our Team */}
-      <section className="bg-gradient-to-br from-blue-50 to-indigo-50 text-slate-800 py-20">
-        <div className="max-w-6xl mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4">About Our Team</h2>
-            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-              We are the Fuelture, a dedicated global team focused on revolutionizing bunker procurement.
+      <section className="bg-gradient-to-br from-blue-50 to-indigo-50 text-slate-800 py-16 px-8">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl md:text-4xl font-extrabold text-slate-800 mb-3">About Our Team</h2>
+            <p className="text-slate-600 max-w-3xl mx-auto text-lg">
+              Fuelture is a dedicated global team of experts focused on revolutionizing bunker procurement through cutting-edge technology and innovation.
             </p>
           </div>
           
-          <div className="mb-16">
-            <h3 className="text-2xl font-bold text-center mb-12">Team Members</h3>
-            <div className="grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-center">
+          <div className="mb-12">
+            <h3 className="text-2xl font-bold text-center mb-8 text-slate-800">Team Members</h3>
+            <div className="flex flex-wrap gap-6 justify-center">
               {teamMembers.map((m) => (
-                <Card key={m.name} className="flex flex-col items-center py-8 px-6 shadow-lg hover:shadow-xl transition-shadow">
-                  <Avatar className="mb-6 size-32 md:size-36 ring-4 ring-blue-100">
+                <Card key={m.name} className="flex flex-col items-center py-6 px-4 shadow-lg hover:shadow-xl transition-shadow w-72 bg-white">
+                  <Avatar className="mb-4 size-28 ring-4 ring-blue-100">
                     <AvatarImage src={m.img} alt={m.name + ' photo'} />
-                    <AvatarFallback className="text-2xl font-bold">{m.name[0]}</AvatarFallback>
+                    <AvatarFallback className="font-bold text-lg">{m.name[0]}</AvatarFallback>
                   </Avatar>
-                  <CardContent className="flex flex-col items-center text-center">
-                    <p className="font-bold text-xl mb-2">{m.name}</p>
-                    <p className="text-sm text-slate-600 font-medium">{m.role}</p>
+                  <CardContent className="flex flex-col items-center text-center p-0">
+                    <p className="font-bold mb-1 text-lg">{m.name}</p>
+                    <p className="text-slate-600 font-medium">{m.role}</p>
                   </CardContent>
                 </Card>
               ))}
@@ -244,18 +207,18 @@ const Fuelture = () => {
           </div>
 
           <div>
-            <h3 className="text-2xl font-bold text-center mb-12">Academic Supervisors & Advisors</h3>
-            <div className="grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-center">
+            <h3 className="text-2xl font-bold text-center mb-8 text-slate-800">Supervisors</h3>
+            <div className="flex flex-wrap gap-6 justify-center">
               {supervisors.map((s) => (
-                <Card key={s.name} className="flex flex-col items-center py-8 px-6 shadow-lg hover:shadow-xl transition-shadow">
-                  <Avatar className="mb-6 size-32 md:size-36 ring-4 ring-indigo-100">
+                <Card key={s.name} className="flex flex-col items-center py-6 px-4 shadow-lg hover:shadow-xl transition-shadow w-72 bg-white">
+                  <Avatar className="mb-4 size-28 ring-4 ring-indigo-100">
                     <AvatarImage src={s.img} alt={s.name + ' photo'} />
-                    <AvatarFallback className="text-2xl font-bold">{s.name[0]}</AvatarFallback>
+                    <AvatarFallback className="font-bold text-lg">{s.name[0]}</AvatarFallback>
                   </Avatar>
-                  <CardContent className="flex flex-col items-center text-center">
-                    <p className="font-bold text-xl mb-2">{s.name}</p>
-                    <p className="text-sm text-slate-600 mb-2">{s.role}</p>
-                    <p className="text-sm text-blue-600 font-semibold">{s.focus}</p>
+                  <CardContent className="flex flex-col items-center text-center p-0">
+                    <p className="font-bold mb-1 text-lg">{s.name}</p>
+                    <p className="text-slate-600 mb-1">{s.role}</p>
+                    <p className="text-blue-600 font-semibold text-sm">{s.focus}</p>
                   </CardContent>
                 </Card>
               ))}
@@ -265,108 +228,68 @@ const Fuelture = () => {
       </section>
 
       {/* Stats Section */}
-      <section style={{ background: '#f8fafc', padding: '6rem 2rem' }}>
-        <div style={{ maxWidth: 1200, margin: '0 auto', textAlign: 'center' }}>
-          <div style={{ marginBottom: '3rem' }}>
-            <h2 style={{ fontSize: '2.5rem', fontWeight: 800, color: '#1e293b', marginBottom: '1rem' }}>Market Impact & Performance</h2>
-            <p style={{ fontSize: '1.1rem', color: '#64748b', maxWidth: '600px', margin: '0 auto' }}>
-              Proven results that demonstrate the transformative power of our AI-driven bunker procurement platform
+      <section className="bg-slate-50 py-16 px-8">
+        <div className="max-w-6xl mx-auto text-center">
+          <div className="mb-10">
+            <h2 className="text-3xl md:text-4xl font-extrabold text-slate-800 mb-3">Market Impact & Statistics</h2>
+            <p className="text-slate-600 max-w-2xl mx-auto text-lg">
+              Real-world data demonstrating the significant impact of optimized bunker procurement strategies.
             </p>
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '2rem' }}>
-            {stats.map((stat) => (
-              <Card key={stat.label} style={{ 
-                background: 'linear-gradient(135deg, #fff 0%, #f8fafc 100%)', 
-                borderRadius: '1rem', 
-                boxShadow: '0 4px 20px rgba(0,0,0,0.08)', 
-                padding: '3rem 2rem', 
-                textAlign: 'center',
-                border: '1px solid #e2e8f0'
-              }}>
-                <div style={{ fontSize: '3rem', fontWeight: 900, color: '#3b82f6', marginBottom: '1rem' }}>{stat.value}</div>
-                <div style={{ fontSize: '1rem', color: '#64748b', fontWeight: 600 }}>{stat.label}</div>
-              </Card>
-            ))}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {stats.map((stat, index) => {
+              const colors = [
+                'text-blue-600',     // $185.7B - Blue
+                'text-emerald-600',  // 216.4M - Green
+                'text-purple-600',   // $257K - Purple
+                'text-orange-600'    // 99% - Orange
+              ];
+              return (
+                <Card key={stat.label} className="bg-gradient-to-br from-white to-slate-50 rounded-2xl shadow-lg p-6 text-center border border-slate-200 hover:shadow-xl transition-shadow">
+                  <div className={`text-4xl md:text-5xl font-black mb-3 ${colors[index]}`}>{stat.value}</div>
+                  <div className="text-slate-600 font-semibold text-sm">{stat.label}</div>
+                </Card>
+              );
+            })}
           </div>
         </div>
       </section>
 
       {/* Contact Section */}
-      <section style={{ background: '#0f172a', color: '#fff', padding: '5rem 2rem' }}>
-        <div style={{ maxWidth: 1200, margin: '0 auto' }}>
-          <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
-            <h2 style={{ fontSize: '2.5rem', fontWeight: 800, marginBottom: '1rem' }}>Get In Touch</h2>
-            <p style={{ fontSize: '1.1rem', color: '#cbd5e1', maxWidth: '600px', margin: '0 auto' }}>
+      <section className="bg-slate-900 text-white py-16 px-8">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-extrabold mb-3">Get In Touch</h2>
+            <p className="text-slate-300 max-w-2xl mx-auto text-lg">
               Ready to revolutionize your bunker procurement strategy? Contact our team to schedule a demonstration.
             </p>
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '3rem' }}>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div>
-              <h4 style={{ fontSize: '1.2rem', fontWeight: 700, marginBottom: '1rem', color: '#60a5fa' }}>Global Headquarters</h4>
-              <div style={{ color: '#cbd5e1', lineHeight: 1.6 }}>
-                <div>Innovation District</div>
-                <div>Singapore & Berlin</div>
-                <div>Research Facilities Worldwide</div>
+              <h4 className="font-bold mb-3 text-blue-400 text-lg">Global Headquarters</h4>
+              <div className="text-slate-300 leading-relaxed">
+                <div>21 Lower Kent Ridge Rd,</div>
+                <div>Singapore 119077</div>
               </div>
             </div>
             <div>
-              <h4 style={{ fontSize: '1.2rem', fontWeight: 700, marginBottom: '1rem', color: '#60a5fa' }}>Business Inquiries</h4>
-              <div style={{ color: '#cbd5e1', lineHeight: 1.6 }}>
-                <div>+65 XXXX XXXX (APAC)</div>
-                <div>+49 XXX XXX XXXX (Europe)</div>
-                <a href="mailto:business@fuelture.ai" style={{ color: '#60a5fa', textDecoration: 'none' }}>business@fuelture.ai</a>
+              <h4 className="font-bold mb-3 text-blue-400 text-lg">Business Inquiries</h4>
+              <div className="text-slate-300 leading-relaxed">
+                <a href="mailto:nguyenthihoa610@gmail.com" className="text-blue-400 no-underline hover:underline transition-colors duration-300">nguyenthihoa610@gmail.com</a>
               </div>
             </div>
             <div>
-              <h4 style={{ fontSize: '1.2rem', fontWeight: 700, marginBottom: '1rem', color: '#60a5fa' }}>Research & Development</h4>
-              <div style={{ color: '#cbd5e1', lineHeight: 1.6 }}>
+              <h4 className="font-bold mb-3 text-blue-400 text-lg">Research & Development</h4>
+              <div className="text-slate-300 leading-relaxed">
                 <div>Mon-Fri: 9:00 AM – 6:00 PM</div>
-                <div>24/7 Technical Support</div>
-                <a href="mailto:research@fuelture.ai" style={{ color: '#60a5fa', textDecoration: 'none' }}>research@fuelture.ai</a>
+                <div className="text-slate-400 text-sm mt-1">Singapore Time (SGT)</div>
               </div>
             </div>
             <div>
-              <h4 style={{ fontSize: '1.2rem', fontWeight: 700, marginBottom: '1rem', color: '#60a5fa' }}>Connect With Us</h4>
-              <div style={{ display: 'flex', gap: '1rem', marginTop: '1rem' }}>
-                <a href="#" aria-label="LinkedIn" style={{ 
-                  width: 48, 
-                  height: 48, 
-                  background: 'linear-gradient(135deg, #0077b5 0%, #005885 100%)', 
-                  borderRadius: '0.5rem', 
-                  display: 'flex', 
-                  alignItems: 'center', 
-                  justifyContent: 'center',
-                  color: '#fff',
-                  textDecoration: 'none',
-                  fontWeight: 'bold',
-                  transition: 'all 0.3s ease'
-                }}>in</a>
-                <a href="#" aria-label="Twitter" style={{ 
-                  width: 48, 
-                  height: 48, 
-                  background: 'linear-gradient(135deg, #1da1f2 0%, #0d8bd9 100%)', 
-                  borderRadius: '0.5rem', 
-                  display: 'flex', 
-                  alignItems: 'center', 
-                  justifyContent: 'center',
-                  color: '#fff',
-                  textDecoration: 'none',
-                  fontWeight: 'bold',
-                  transition: 'all 0.3s ease'
-                }}>𝕏</a>
-                <a href="#" aria-label="Research Gate" style={{ 
-                  width: 48, 
-                  height: 48, 
-                  background: 'linear-gradient(135deg, #00d4aa 0%, #00b494 100%)', 
-                  borderRadius: '0.5rem', 
-                  display: 'flex', 
-                  alignItems: 'center', 
-                  justifyContent: 'center',
-                  color: '#fff',
-                  textDecoration: 'none',
-                  fontWeight: 'bold',
-                  transition: 'all 0.3s ease'
-                }}>RG</a>
+              <h4 className="font-bold mb-3 text-blue-400 text-lg">Connect With Us</h4>
+              <div className="flex gap-4 mt-3">
+                <a href="https://www.linkedin.com" aria-label="LinkedIn" className="w-12 h-12 bg-gradient-to-br from-blue-600 to-blue-700 rounded-lg flex items-center justify-center text-white no-underline font-bold transition-all duration-300 hover:shadow-lg hover:scale-110">in</a>
+                <a href="https://www.X.com" aria-label="Twitter" className="w-12 h-12 bg-gradient-to-br from-black to-slate-800 rounded-lg flex items-center justify-center text-white no-underline font-bold transition-all duration-300 hover:shadow-lg hover:scale-110">𝕏</a>
               </div>
             </div>
           </div>
@@ -374,11 +297,11 @@ const Fuelture = () => {
       </section>
 
       {/* Footer */}
-      <footer style={{ background: '#020617', color: '#64748b', padding: '2rem', textAlign: 'center', borderTop: '1px solid #1e293b' }}>
-        <div style={{ maxWidth: 1200, margin: '0 auto' }}>
-          <p style={{ margin: 0, fontSize: '0.9rem' }}>
-            © 2024 Fuelture Technologies. All rights reserved. | 
-            <span style={{ color: '#60a5fa' }}> Revolutionizing Maritime Fuel Procurement Through AI</span>
+      <footer className="bg-slate-950 text-slate-500 py-6 text-center border-t border-slate-800">
+        <div className="max-w-6xl mx-auto px-8">
+          <p className="m-0">
+            © 2025 Fuelture Technologies. All rights reserved. | 
+            <span className="text-blue-400"> Revolutionizing Maritime Fuel Procurement Through AI</span>
           </p>
         </div>
       </footer>
