@@ -5,17 +5,17 @@ import { Brain, Settings, Cloud, Cpu, CheckCircle } from "lucide-react";
 const teamMembers = [
   {
     name: 'Hoa Nguyen',
-    role: 'AI Optimization & Strategy & Management',
+    role: 'AI Optimization & Strategy',
     img: '/teams/current/hoa.jpg',
   },
   {
     name: 'Hanming Hu',
-    role: 'Software Engineer',
+    role: 'AI Software Engineer',
     img: '/teams/current/hanming.jpg',
   },
 ];
 
-const supervisors = [
+const advisors = [
   {
     name: 'Ralf Borndörfer',
     role: 'FU Berlin & Zuse Institute Berlin',
@@ -207,9 +207,9 @@ const Fuelture = () => {
           </div>
 
           <div>
-            <h3 className="text-2xl font-bold text-center mb-8 text-slate-800">Supervisors</h3>
+            <h3 className="text-2xl font-bold text-center mb-8 text-slate-800">Advisors</h3>
             <div className="flex flex-wrap gap-6 justify-center">
-              {supervisors.map((s) => (
+              {advisors.map((s) => (
                 <Card key={s.name} className="flex flex-col items-center py-6 px-4 shadow-lg hover:shadow-xl transition-shadow w-72 bg-white">
                   <Avatar className="mb-4 size-28 ring-4 ring-indigo-100">
                     <AvatarImage src={s.img} alt={s.name + ' photo'} />
