@@ -146,20 +146,20 @@ export const currentMembers: TeamMember[] = [
         github:"",
         dribbble:"",
     },
+];
+  
+export const formerMembers: TeamMember[] = [
     {
         id: "aline",
         name: "Aline Janvier",
-        term: "2025 Feb –",
+        term: "2025 Feb – 2025 Jul",
         focus: "Bunker fuel forecasting, News sentiment analysis, Portfolio optimization",
-        avatar: "teams/current/aline.jpg",
+        avatar: "teams/former/aline.jpg",
         company: "",
         linkedin:"https://www.linkedin.com/in/alinejanv/",
         github:"",
         dribbble:"",
     },
-];
-  
-export const formerMembers: TeamMember[] = [
     {
         id: "arshia",
         name: "Arshia, Feizmohammady",

@@ -96,7 +96,7 @@ const Fuelture = () => {
             Revolutionizing maritime fuel procurement through AI-powered forecasting, quantum-ready optimization, and real-time market intelligence
           </p>
           <div className="flex gap-4 justify-center flex-wrap">
-            <a href="#" className="bg-gradient-to-r from-blue-600 to-blue-800 text-white px-10 py-4 rounded-lg no-underline font-bold transition-all duration-300 shadow-lg shadow-blue-600/40 hover:shadow-xl hover:shadow-blue-600/50 hover:scale-105">
+            <a href="https://main.d6es34ldyss6p.amplifyapp.com/" className="bg-gradient-to-r from-blue-600 to-blue-800 text-white px-10 py-4 rounded-lg no-underline font-bold transition-all duration-300 shadow-lg shadow-blue-600/40 hover:shadow-xl hover:shadow-blue-600/50 hover:scale-105">
               Request Demo
             </a>
           </div>
