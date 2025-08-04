@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import Linkedin from "../assets/utils/linkedin.svg";
 
 const Home = () => {
