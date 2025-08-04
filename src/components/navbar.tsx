@@ -54,6 +54,10 @@ const Navbar = ({
       url: "/research",
     },
     {
+      title: "Teaching",
+      url: "/teaching",
+    },
+    {
       title: "Members",
       url: "/member",
     },

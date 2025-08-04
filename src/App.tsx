@@ -5,6 +5,7 @@ import Events from './pages/events'
 import Member from './pages/member'
 import Pri from './pages/pri'
 import Research from './pages/research'
+import Teaching from './pages/teaching'
 import Fuelture from './pages/projects/fuelture'
 import { Navbar } from './components/navbar'
 
@@ -15,6 +16,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home/>} />
         <Route path="/research" element={<Research/>} />
+        <Route path="/teaching" element={<Teaching/>} />
         <Route path="/events" element={<Events/>} />
         <Route path="/member" element={<Member/>} />
         <Route path="/pri" element={<Pri/>} />
