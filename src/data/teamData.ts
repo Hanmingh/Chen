@@ -146,6 +146,17 @@ export const currentMembers: TeamMember[] = [
         github:"",
         dribbble:"",
     },
+    {
+        id: "deborah",
+        name: "Deborah Ng Jing Ting",
+        term: "2025 Aug –",
+        focus: "Artificial Intelligence, Computational Finance, Data Science",
+        avatar: "teams/current/deborah.jpg",
+        company: "",
+        linkedin:"https://www.linkedin.com/in/deborah-njt/",
+        github:"",
+        dribbble:"",
+    },
 ];
   
 export const formerMembers: TeamMember[] = [
