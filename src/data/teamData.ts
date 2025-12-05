@@ -114,17 +114,6 @@ export const currentMembers: TeamMember[] = [
         dribbble:"",
     },
     {
-        id: "guoyang",
-        name: "Guoyang, Rong",
-        term: "2024 Aug –",
-        focus: "Informetrics, citation analysis and research metrics, interdisciplinary patterns",
-        avatar: "teams/current/guoyang.jpg",
-        company: "",
-        linkedin:"https://www.linkedin.com/in/guoyang-rong-1452582a1/",
-        github:"",
-        dribbble:"",
-    },
-    {
         id: "hanming",
         name: "Hanming, Hu",
         term: "2024 Oct –",
@@ -160,6 +149,17 @@ export const currentMembers: TeamMember[] = [
 ];
   
 export const formerMembers: TeamMember[] = [
+    {
+        id: "guoyang",
+        name: "Guoyang, Rong",
+        term: "2024 Aug – 2025 Dec",
+        focus: "Informetrics, citation analysis and research metrics, interdisciplinary patterns",
+        avatar: "teams/former/guoyang.jpg",
+        company: "",
+        linkedin:"https://www.linkedin.com/in/guoyang-rong-1452582a1/",
+        github:"",
+        dribbble:"",
+    },
     {
         id: "aline",
         name: "Aline Janvier",
