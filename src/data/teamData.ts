@@ -135,17 +135,6 @@ export const currentMembers: TeamMember[] = [
         github:"",
         dribbble:"",
     },
-    {
-        id: "deborah",
-        name: "Deborah Ng Jing Ting",
-        term: "2025 Aug –",
-        focus: "Artificial Intelligence, Computational Finance, Data Science",
-        avatar: "teams/current/deborah.jpg",
-        company: "",
-        linkedin:"https://www.linkedin.com/in/deborah-njt/",
-        github:"",
-        dribbble:"",
-    },
 ];
   
 export const formerMembers: TeamMember[] = [
@@ -157,6 +146,17 @@ export const formerMembers: TeamMember[] = [
         avatar: "teams/former/guoyang.jpg",
         company: "",
         linkedin:"https://www.linkedin.com/in/guoyang-rong-1452582a1/",
+        github:"",
+        dribbble:"",
+    },
+    {
+        id: "deborah",
+        name: "Deborah Ng Jing Ting",
+        term: "2025 Aug – 2025 Dec",
+        focus: "Artificial Intelligence, Computational Finance, Data Science",
+        avatar: "teams/current/deborah.jpg",
+        company: "",
+        linkedin:"https://www.linkedin.com/in/deborah-njt/",
         github:"",
         dribbble:"",
     },
