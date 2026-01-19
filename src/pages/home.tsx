@@ -99,7 +99,7 @@ const Home = () => {
           {/* Download CV */}
           <section>
             <a
-              href="/CV_YingChen_20250801.pdf"
+              href="/CV_YingChen_20260117.pdf"
               className="text-2xl font-bold mb-4"
               target="_blank"
               rel="noopener noreferrer"
