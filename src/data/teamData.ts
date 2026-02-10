@@ -135,6 +135,17 @@ export const currentMembers: TeamMember[] = [
         github:"",
         dribbble:"",
     },
+    {
+        id: "tilian",
+        name: "Tilian, Bourachot",
+        term: "2026 Feb –",
+        focus: "Quantitative Finance, Portfolio optimization",
+        avatar: "teams/current/tilian.jpeg",
+        company: "",
+        linkedin:"https://www.linkedin.com/in/tilian-bourachot-054486288",
+        github:"",
+        dribbble:"",
+    },
 ];
   
 export const formerMembers: TeamMember[] = [
