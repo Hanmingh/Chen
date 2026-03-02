@@ -136,6 +136,17 @@ export const currentMembers: TeamMember[] = [
         dribbble:"",
     },
     {
+        id: "richard",
+        name: "Richard, Weiss",
+        term: "2026 Feb –",
+        focus: "Reinforcement Learning",
+        avatar: "teams/current/richard.jpeg",
+        company: "",
+        linkedin:"https://www.linkedin.com/in/richard-weiss-math",
+        github:"",
+        dribbble:"",
+    },
+    {
         id: "tilian",
         name: "Tilian, Bourachot",
         term: "2026 Feb –",
