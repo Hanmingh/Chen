@@ -136,6 +136,17 @@ export const currentMembers: TeamMember[] = [
         dribbble:"",
     },
     {
+        id: "dennis",
+        name: "Dennis, Thumm",
+        term: "2026 Jan –",
+        focus: "Causality, Complex Systems, Probabilistic Machine Learning",
+        avatar: "teams/current/dennis.jpeg",
+        company: "",
+        linkedin:"https://www.linkedin.com/in/dennisthumm/",
+        github:"",
+        dribbble:"",
+    },
+    {
         id: "richard",
         name: "Richard, Weiss",
         term: "2026 Feb –",
