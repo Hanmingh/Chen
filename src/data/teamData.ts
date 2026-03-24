@@ -168,6 +168,28 @@ export const currentMembers: TeamMember[] = [
         github:"",
         dribbble:"",
     },
+    {
+        id: "tim",
+        name: "Tim, Herrmann",
+        term: "2026 Sep –",
+        focus: "Reinforcement learning, Mathematical finance",
+        avatar: "teams/current/tim.jpeg",
+        company: "",
+        linkedin:"https://www.linkedin.com/in/tim-herrmann-a66123236",
+        github:"",
+        dribbble:"",
+    },
+    {
+        id: "Jonathan",
+        name: "Jonathan, Tjandra",
+        term: "2026 Jun –",
+        focus: "",
+        avatar: "teams/current/jonathan.png",
+        company: "",
+        linkedin:"https://www.linkedin.com/in/jonathan-tjandra-ab2b18225/",
+        github:"",
+        dribbble:"",
+    },
 ];
   
 export const formerMembers: TeamMember[] = [
