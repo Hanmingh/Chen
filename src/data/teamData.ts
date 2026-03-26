@@ -183,7 +183,7 @@ export const currentMembers: TeamMember[] = [
         id: "Jonathan",
         name: "Jonathan, Tjandra",
         term: "2026 Jun –",
-        focus: "",
+        focus: "Quantitative finance, Quantitative Trading",
         avatar: "teams/current/jonathan.png",
         company: "",
         linkedin:"https://www.linkedin.com/in/jonathan-tjandra-ab2b18225/",
