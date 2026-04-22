@@ -81,17 +81,6 @@ export const currentMembers: TeamMember[] = [
         dribbble:"",
     },
     {
-        id: "lei",
-        name: "Lei, Zhou",
-        term: "2023 Feb –",
-        focus: "Capital Structure, Structure Credit Risk Model, Corporate Finance, Convertible Bonds, Callable Bonds",
-        avatar: "teams/current/lei.jpg",
-        company: "",
-        linkedin:"",
-        github:"",
-        dribbble:"https://sites.google.com/view/leizhou",
-    },
-    {
         id: "hoa",
         name: "Hoa, Nguyen",
         term: "2024 Feb –",
@@ -193,6 +182,17 @@ export const currentMembers: TeamMember[] = [
 ];
   
 export const formerMembers: TeamMember[] = [
+    {
+        id: "lei",
+        name: "Lei, Zhou",
+        term: "2023 Feb – 2026 Mar",
+        focus: "Capital Structure, Structure Credit Risk Model, Corporate Finance, Convertible Bonds, Callable Bonds",
+        avatar: "teams/former/lei.jpg",
+        company: "",
+        linkedin:"",
+        github:"",
+        dribbble:"https://sites.google.com/view/leizhou",
+    },
     {
         id: "guoyang",
         name: "Guoyang, Rong",
@@ -309,7 +309,7 @@ export const formerMembers: TeamMember[] = [
         term: "2024  March – 2024 Jun",
         focus: "Digital Currencies",
         avatar: "teams/former/radian.jpg",
-        company: "Quantitative Analyst @ Optiver",
+        company: "",
         linkedin:"https://www.linkedin.com/in/radiankrisno/",
         github:"",
         dribbble:"",
