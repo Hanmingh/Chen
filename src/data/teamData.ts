@@ -158,6 +158,17 @@ export const currentMembers: TeamMember[] = [
         dribbble:"",
     },
     {
+        id: "alaric",
+        name: "Alaric, Neo",
+        term: "2026 Apr –",
+        focus: "Quantitative Finance, Biotech and Healthcare Market Analysis",
+        avatar: "teams/current/alaric.png",
+        company: "",
+        linkedin:"https://www.linkedin.com/in/alaricneo/",
+        github:"",
+        dribbble:"",
+    },
+    {
         id: "Jonathan",
         name: "Jonathan, Tjandra",
         term: "2026 Jun –",
