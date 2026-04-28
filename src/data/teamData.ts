@@ -147,13 +147,13 @@ export const currentMembers: TeamMember[] = [
         dribbble:"",
     },
     {
-        id: "tilian",
-        name: "Tilian, Bourachot",
-        term: "2026 Feb –",
-        focus: "Quantitative Finance, Portfolio optimization",
-        avatar: "teams/current/tilian.jpeg",
+        id: "yizhuo",
+        name: "Yizhuo, Wei",
+        term: "2026 Apr –",
+        focus: "Multi-Agent Systems, Probabilistic Machine Learning, LLM-based Systems",
+        avatar: "teams/current/yizhuo.jpeg",
         company: "",
-        linkedin:"https://www.linkedin.com/in/tilian-bourachot-054486288",
+        linkedin:"https://www.linkedin.com/in/joel-wei-303641373/",
         github:"",
         dribbble:"",
     },
@@ -193,6 +193,18 @@ export const currentMembers: TeamMember[] = [
 ];
   
 export const formerMembers: TeamMember[] = [
+    
+    {
+        id: "tilian",
+        name: "Tilian, Bourachot",
+        term: "2026 Feb – 2026 Apr",
+        focus: "Quantitative Finance, Portfolio optimization",
+        avatar: "teams/former/tilian.jpeg",
+        company: "",
+        linkedin:"https://www.linkedin.com/in/tilian-bourachot-054486288",
+        github:"",
+        dribbble:"",
+    },
     {
         id: "lei",
         name: "Lei, Zhou",
