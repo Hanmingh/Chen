@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState, useCallback } from "react";
+
 import { Card } from "@/components/ui/card";
 import { Document, Page, pdfjs } from "react-pdf";
 import "react-pdf/dist/Page/AnnotationLayer.css";
@@ -97,14 +98,10 @@ const features = [
 const QHealth = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
-  const pageWrapRef = useRef<HTMLDivElement>(null);
   const [numPages, setNumPages] = useState<number>(0);
   const [pageNumber, setPageNumber] = useState(1);
   const [containerWidth, setContainerWidth] = useState(800);
-  const [scale, setScale] = useState(1);
-  const lastPinchDist = useRef<number | null>(null);
 
-  // 自适应宽度：取容器宽度和视口宽度的较小值，确保手机不超屏
   const measureWidth = useCallback(() => {
     const vw = window.innerWidth;
     const cw = containerRef.current?.clientWidth ?? vw;
@@ -116,23 +113,6 @@ const QHealth = () => {
     window.addEventListener("resize", measureWidth);
     return () => window.removeEventListener("resize", measureWidth);
   }, [measureWidth]);
-
-  // 捏合缩放 touch 处理
-  const handleTouchMove = useCallback((e: React.TouchEvent) => {
-    if (e.touches.length !== 2) return;
-    const dx = e.touches[0].clientX - e.touches[1].clientX;
-    const dy = e.touches[0].clientY - e.touches[1].clientY;
-    const dist = Math.sqrt(dx * dx + dy * dy);
-    if (lastPinchDist.current !== null) {
-      const ratio = dist / lastPinchDist.current;
-      setScale(s => Math.min(4, Math.max(0.5, s * ratio)));
-    }
-    lastPinchDist.current = dist;
-  }, []);
-
-  const handleTouchEnd = useCallback(() => {
-    lastPinchDist.current = null;
-  }, []);
 
   // Prevent Ctrl+S / Ctrl+P on this page
   useEffect(() => {
@@ -370,68 +350,40 @@ const QHealth = () => {
             className="rounded-2xl overflow-hidden shadow-xl border border-slate-200 bg-white"
             onContextMenu={(e) => e.preventDefault()}
           >
-            {/* 控制栏：翻页 + 缩放 */}
-            <div className="flex items-center justify-between px-3 py-2 bg-slate-100 border-b border-slate-200 select-none gap-2 flex-wrap">
-              <div className="flex items-center gap-2">
-                <button
-                  onClick={() => setPageNumber((p) => Math.max(1, p - 1))}
-                  disabled={pageNumber <= 1}
-                  className="px-3 py-1.5 rounded-lg bg-white border border-slate-300 text-sm font-semibold disabled:opacity-40 hover:bg-slate-50 active:scale-95 transition-all"
-                >← Prev</button>
-                <span className="text-sm text-slate-600 font-medium whitespace-nowrap">
-                  {pageNumber} / {numPages || "—"}
-                </span>
-                <button
-                  onClick={() => setPageNumber((p) => Math.min(numPages, p + 1))}
-                  disabled={pageNumber >= numPages}
-                  className="px-3 py-1.5 rounded-lg bg-white border border-slate-300 text-sm font-semibold disabled:opacity-40 hover:bg-slate-50 active:scale-95 transition-all"
-                >Next →</button>
-              </div>
-              <div className="flex items-center gap-2">
-                <button
-                  onClick={() => setScale(s => Math.max(0.5, +(s - 0.25).toFixed(2)))}
-                  className="w-8 h-8 rounded-lg bg-white border border-slate-300 text-lg font-bold hover:bg-slate-50 active:scale-95 transition-all flex items-center justify-center"
-                >−</button>
-                <span className="text-xs text-slate-500 w-10 text-center">{Math.round(scale * 100)}%</span>
-                <button
-                  onClick={() => setScale(s => Math.min(4, +(s + 0.25).toFixed(2)))}
-                  className="w-8 h-8 rounded-lg bg-white border border-slate-300 text-lg font-bold hover:bg-slate-50 active:scale-95 transition-all flex items-center justify-center"
-                >+</button>
-                <button
-                  onClick={() => setScale(1)}
-                  className="px-2 py-1 rounded-lg bg-white border border-slate-300 text-xs text-slate-500 hover:bg-slate-50 active:scale-95 transition-all"
-                >Reset</button>
-              </div>
+            {/* 翻页控制栏 */}
+            <div className="flex items-center justify-between px-4 py-3 bg-slate-100 border-b border-slate-200 select-none">
+              <button
+                onClick={() => setPageNumber((p) => Math.max(1, p - 1))}
+                disabled={pageNumber <= 1}
+                className="px-4 py-1.5 rounded-lg bg-white border border-slate-300 text-sm font-semibold disabled:opacity-40 hover:bg-slate-50 active:scale-95 transition-all"
+              >← Prev</button>
+              <span className="text-sm text-slate-600 font-medium">
+                {pageNumber} / {numPages || "—"}
+              </span>
+              <button
+                onClick={() => setPageNumber((p) => Math.min(numPages, p + 1))}
+                disabled={pageNumber >= numPages}
+                className="px-4 py-1.5 rounded-lg bg-white border border-slate-300 text-sm font-semibold disabled:opacity-40 hover:bg-slate-50 active:scale-95 transition-all"
+              >Next →</button>
             </div>
 
-            {/* PDF canvas 渲染区 — 双指捏合缩放 + 单指滑动 */}
+            {/* PDF canvas 渲染区 */}
             <div
               className="overflow-auto bg-slate-200 flex justify-center py-4"
-              style={{ WebkitOverflowScrolling: "touch", minHeight: "500px", maxHeight: "75vh" }}
-              onTouchMove={handleTouchMove}
-              onTouchEnd={handleTouchEnd}
+              style={{ WebkitOverflowScrolling: "touch", minHeight: "400px", maxHeight: "75vh" }}
             >
-              <div
-                ref={pageWrapRef}
-                style={{
-                  transform: `scale(${scale})`,
-                  transformOrigin: "top center",
-                  transition: "transform 0.15s ease",
-                }}
+              <Document
+                file="/projects/q-health-deck.pdf"
+                onLoadSuccess={({ numPages }) => setNumPages(numPages)}
+                loading={<div className="text-slate-400 py-20 px-8 text-center">Loading...</div>}
               >
-                <Document
-                  file="/projects/q-health-deck.pdf"
-                  onLoadSuccess={({ numPages }) => setNumPages(numPages)}
-                  loading={<div className="text-slate-400 py-20 px-8 text-center">Loading...</div>}
-                >
-                  <Page
-                    pageNumber={pageNumber}
-                    width={containerWidth > 32 ? containerWidth - 32 : containerWidth}
-                    renderTextLayer={false}
-                    renderAnnotationLayer={false}
-                  />
-                </Document>
-              </div>
+                <Page
+                  pageNumber={pageNumber}
+                  width={containerWidth > 32 ? containerWidth - 32 : containerWidth}
+                  renderTextLayer={false}
+                  renderAnnotationLayer={false}
+                />
+              </Document>
             </div>
           </div>
 
