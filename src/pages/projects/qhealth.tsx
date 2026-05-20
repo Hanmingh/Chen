@@ -1,5 +1,13 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState, useCallback } from "react";
 import { Card } from "@/components/ui/card";
+import { Document, Page, pdfjs } from "react-pdf";
+import "react-pdf/dist/Page/AnnotationLayer.css";
+import "react-pdf/dist/Page/TextLayer.css";
+
+pdfjs.GlobalWorkerOptions.workerSrc = new URL(
+  "pdfjs-dist/build/pdf.worker.min.mjs",
+  import.meta.url
+).toString();
 import { Brain, Settings, Zap, TrendingUp, CheckCircle } from "lucide-react";
 
 const teamMembers = [
@@ -88,6 +96,43 @@ const features = [
 
 const QHealth = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const pageWrapRef = useRef<HTMLDivElement>(null);
+  const [numPages, setNumPages] = useState<number>(0);
+  const [pageNumber, setPageNumber] = useState(1);
+  const [containerWidth, setContainerWidth] = useState(800);
+  const [scale, setScale] = useState(1);
+  const lastPinchDist = useRef<number | null>(null);
+
+  // 自适应容器宽度
+  const measureWidth = useCallback(() => {
+    if (containerRef.current) {
+      setContainerWidth(containerRef.current.clientWidth);
+    }
+  }, []);
+
+  useEffect(() => {
+    measureWidth();
+    window.addEventListener("resize", measureWidth);
+    return () => window.removeEventListener("resize", measureWidth);
+  }, [measureWidth]);
+
+  // 捏合缩放 touch 处理
+  const handleTouchMove = useCallback((e: React.TouchEvent) => {
+    if (e.touches.length !== 2) return;
+    const dx = e.touches[0].clientX - e.touches[1].clientX;
+    const dy = e.touches[0].clientY - e.touches[1].clientY;
+    const dist = Math.sqrt(dx * dx + dy * dy);
+    if (lastPinchDist.current !== null) {
+      const ratio = dist / lastPinchDist.current;
+      setScale(s => Math.min(4, Math.max(0.5, s * ratio)));
+    }
+    lastPinchDist.current = dist;
+  }, []);
+
+  const handleTouchEnd = useCallback(() => {
+    lastPinchDist.current = null;
+  }, []);
 
   // Prevent Ctrl+S / Ctrl+P on this page
   useEffect(() => {
@@ -313,37 +358,83 @@ const QHealth = () => {
       </section>
 
       {/* Investor Deck */}
-      <section className="bg-slate-50 py-16 px-8">
-        <div className="max-w-5xl mx-auto">
+      <section className="bg-slate-50 py-16 px-4 md:px-8">
+        <div className="max-w-4xl mx-auto">
           <div className="text-center mb-8">
             <h2 className="text-3xl md:text-4xl font-extrabold text-slate-800 mb-3">Investor Deck</h2>
-            <p className="text-slate-500">Q-Health pitch deck — for viewing only</p>
+            <p className="text-slate-500">Q-Health pitch deck — view only</p>
           </div>
+
           <div
-            className="relative rounded-2xl overflow-hidden shadow-xl border border-slate-200 bg-white"
+            ref={containerRef}
+            className="rounded-2xl overflow-hidden shadow-xl border border-slate-200 bg-white"
             onContextMenu={(e) => e.preventDefault()}
           >
-            {/* 移动端触摸可滑动包裹层 */}
-            <div
-              style={{
-                WebkitOverflowScrolling: "touch",
-                overflowY: "auto",
-                height: "680px",
-              }}
-            >
-              <iframe
-                src="/projects/q-health-deck.pdf#toolbar=0&navpanes=0&scrollbar=1&view=FitH"
-                title="Q-Health Investor Deck"
-                className="w-full"
-                style={{ height: "100%", minHeight: "680px", border: "none", display: "block" }}
-              />
+            {/* 控制栏：翻页 + 缩放 */}
+            <div className="flex items-center justify-between px-3 py-2 bg-slate-100 border-b border-slate-200 select-none gap-2 flex-wrap">
+              <div className="flex items-center gap-2">
+                <button
+                  onClick={() => setPageNumber((p) => Math.max(1, p - 1))}
+                  disabled={pageNumber <= 1}
+                  className="px-3 py-1.5 rounded-lg bg-white border border-slate-300 text-sm font-semibold disabled:opacity-40 hover:bg-slate-50 active:scale-95 transition-all"
+                >← Prev</button>
+                <span className="text-sm text-slate-600 font-medium whitespace-nowrap">
+                  {pageNumber} / {numPages || "—"}
+                </span>
+                <button
+                  onClick={() => setPageNumber((p) => Math.min(numPages, p + 1))}
+                  disabled={pageNumber >= numPages}
+                  className="px-3 py-1.5 rounded-lg bg-white border border-slate-300 text-sm font-semibold disabled:opacity-40 hover:bg-slate-50 active:scale-95 transition-all"
+                >Next →</button>
+              </div>
+              <div className="flex items-center gap-2">
+                <button
+                  onClick={() => setScale(s => Math.max(0.5, +(s - 0.25).toFixed(2)))}
+                  className="w-8 h-8 rounded-lg bg-white border border-slate-300 text-lg font-bold hover:bg-slate-50 active:scale-95 transition-all flex items-center justify-center"
+                >−</button>
+                <span className="text-xs text-slate-500 w-10 text-center">{Math.round(scale * 100)}%</span>
+                <button
+                  onClick={() => setScale(s => Math.min(4, +(s + 0.25).toFixed(2)))}
+                  className="w-8 h-8 rounded-lg bg-white border border-slate-300 text-lg font-bold hover:bg-slate-50 active:scale-95 transition-all flex items-center justify-center"
+                >+</button>
+                <button
+                  onClick={() => setScale(1)}
+                  className="px-2 py-1 rounded-lg bg-white border border-slate-300 text-xs text-slate-500 hover:bg-slate-50 active:scale-95 transition-all"
+                >Reset</button>
+              </div>
             </div>
-            {/* Overlay strip that covers Chrome's PDF top-right download button area */}
+
+            {/* PDF canvas 渲染区 — 双指捏合缩放 + 单指滑动 */}
             <div
-              className="absolute top-0 right-0 h-10 w-24 bg-slate-50"
-              style={{ pointerEvents: "none" }}
-            />
+              className="overflow-auto bg-slate-200 flex justify-center py-4"
+              style={{ WebkitOverflowScrolling: "touch", minHeight: "500px", maxHeight: "75vh" }}
+              onTouchMove={handleTouchMove}
+              onTouchEnd={handleTouchEnd}
+            >
+              <div
+                ref={pageWrapRef}
+                style={{
+                  transform: `scale(${scale})`,
+                  transformOrigin: "top center",
+                  transition: "transform 0.15s ease",
+                }}
+              >
+                <Document
+                  file="/projects/q-health-deck.pdf"
+                  onLoadSuccess={({ numPages }) => setNumPages(numPages)}
+                  loading={<div className="text-slate-400 py-20 px-8 text-center">Loading...</div>}
+                >
+                  <Page
+                    pageNumber={pageNumber}
+                    width={containerWidth > 32 ? containerWidth - 32 : containerWidth}
+                    renderTextLayer={false}
+                    renderAnnotationLayer={false}
+                  />
+                </Document>
+              </div>
+            </div>
           </div>
+
           <p className="text-center text-xs text-slate-400 mt-3">
             This document is confidential and for viewing purposes only.
           </p>
