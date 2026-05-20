@@ -8,13 +8,13 @@ const teamMembers = [
     name: "Avigail Choi",
     role: "CEO",
     focus: "AI & Data Science",
-    img: "",
+    img: "/projects/qhealth-team/avigail-choi.jpeg",
   },
   {
     name: "Richard Weiss",
     role: "CTO – NUS",
     focus: "AI, Reinforcement Learning & Graph Neural Networks",
-    img: "",
+    img: "/projects/qhealth-team/richard-weiss.jpeg",
   },
 ];
 
@@ -23,25 +23,25 @@ const advisors = [
     name: "Ying Chen",
     role: "Advisor – NUS",
     focus: "AI Forecasting & Quantum Computing",
-    img: "https://blog.nus.edu.sg/matcheny/files/2024/02/Ying-Chen-51578cb9213593e0.jpg",
+    img: "/projects/qhealth-team/ying-chen.jpeg",
   },
   {
     name: "Thorsten Koch",
     role: "Advisor – TU Berlin & Zuse Institute Berlin",
     focus: "Software & Industrial Optimization & Quantum Optimization",
-    img: "https://blog.nus.edu.sg/matcheny/files/2024/02/Thorsten-Koch-d143f98cc02e87ff.png",
+    img: "/projects/qhealth-team/thorsten-koch.jpeg",
   },
   {
     name: "Glen Liau",
     role: "Advisor – NUH / AH",
     focus: "Deputy Chief Medical Informatics Officer, Joint Replacement Surgery",
-    img: "",
+    img: "/projects/qhealth-team/glen-liau.jpeg",
   },
   {
     name: "Patrick Chia",
     role: "Advisor – NUH",
     focus: "Medical Data Analytics & Hospital System",
-    img: "",
+    img: "/projects/qhealth-team/patrick-chia.jpeg",
   },
 ];
 
