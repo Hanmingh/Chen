@@ -1,5 +1,4 @@
-import { useEffect, useRef, useState, useCallback } from "react";
-
+import { useEffect, useRef, useState } from "react";
 import { Card } from "@/components/ui/card";
 import { Document, Page, pdfjs } from "react-pdf";
 import "react-pdf/dist/Page/AnnotationLayer.css";
@@ -102,17 +101,14 @@ const QHealth = () => {
   const [pageNumber, setPageNumber] = useState(1);
   const [containerWidth, setContainerWidth] = useState(800);
 
-  const measureWidth = useCallback(() => {
-    const vw = window.innerWidth;
-    const cw = containerRef.current?.clientWidth ?? vw;
-    setContainerWidth(Math.min(cw, vw));
-  }, []);
-
   useEffect(() => {
-    measureWidth();
-    window.addEventListener("resize", measureWidth);
-    return () => window.removeEventListener("resize", measureWidth);
-  }, [measureWidth]);
+    if (!containerRef.current) return;
+    const observer = new ResizeObserver((entries) => {
+      setContainerWidth(entries[0].contentRect.width);
+    });
+    observer.observe(containerRef.current);
+    return () => observer.disconnect();
+  }, []);
 
   // Prevent Ctrl+S / Ctrl+P on this page
   useEffect(() => {
