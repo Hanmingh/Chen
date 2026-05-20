@@ -1,0 +1,31 @@
+import './App.css'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Home from './pages/home'
+import Events from './pages/events'
+import Member from './pages/member'
+import Pri from './pages/pri'
+import Research from './pages/research'
+import Teaching from './pages/teaching'
+import Fuelture from './pages/projects/fuelture'
+import QHealth from './pages/projects/qhealth'
+import { Navbar } from './components/navbar'
+
+function App() {
+  return (
+    <BrowserRouter>
+      <Navbar/>
+      <Routes>
+        <Route path="/" element={<Home/>} />
+        <Route path="/research" element={<Research/>} />
+        <Route path="/teaching" element={<Teaching/>} />
+        <Route path="/events" element={<Events/>} />
+        <Route path="/member" element={<Member/>} />
+        <Route path="/pri" element={<Pri/>} />
+        <Route path="/research/fuelture" element={<Fuelture/>} />
+        <Route path="/Q-Health" element={<QHealth/>} />
+      </Routes>
+    </BrowserRouter>
+  )
+}
+
+export default App
