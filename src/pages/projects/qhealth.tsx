@@ -316,7 +316,7 @@ const QHealth = () => {
               className="w-full max-h-[560px] bg-black"
               playsInline
             >
-              <source src="/projects/q-health-demo.mp4" type="video/mp4" />
+              <source src="https://github.com/Hanmingh/Chen/releases/download/v1.0-media/q-health-demo.mp4" type="video/mp4" />
               您的浏览器不支持 video 标签。
             </video>
           </div>
