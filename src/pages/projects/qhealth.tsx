@@ -1,6 +1,5 @@
 import { useEffect, useRef } from "react";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card } from "@/components/ui/card";
 import { Brain, Settings, Zap, TrendingUp, CheckCircle } from "lucide-react";
 
 const teamMembers = [
@@ -14,7 +13,7 @@ const teamMembers = [
     name: "Richard Weiss",
     role: "CTO – NUS",
     focus: "AI, Reinforcement Learning & Graph Neural Networks",
-    img: "/projects/qhealth-team/richard-weiss.jpeg",
+    img: "/projects/qhealth-team/richard-weiss.png",
   },
 ];
 
@@ -23,25 +22,25 @@ const advisors = [
     name: "Ying Chen",
     role: "Advisor – NUS",
     focus: "AI Forecasting & Quantum Computing",
-    img: "/projects/qhealth-team/ying-chen.jpeg",
+    img: "/projects/qhealth-team/ying-chen.png",
   },
   {
     name: "Thorsten Koch",
     role: "Advisor – TU Berlin & Zuse Institute Berlin",
     focus: "Software & Industrial Optimization & Quantum Optimization",
-    img: "/projects/qhealth-team/thorsten-koch.jpeg",
+    img: "/projects/qhealth-team/thorsten-koch.png",
   },
   {
     name: "Glen Liau",
     role: "Advisor – NUH / AH",
     focus: "Deputy Chief Medical Informatics Officer, Joint Replacement Surgery",
-    img: "/projects/qhealth-team/glen-liau.jpeg",
+    img: "/projects/qhealth-team/glen-liau.png",
   },
   {
     name: "Patrick Chia",
     role: "Advisor – NUH",
     focus: "Medical Data Analytics & Hospital System",
-    img: "/projects/qhealth-team/patrick-chia.jpeg",
+    img: "/projects/qhealth-team/patrick-chia.png",
   },
 ];
 
@@ -257,39 +256,29 @@ const QHealth = () => {
           </div>
 
           <h3 className="text-xl font-bold text-center mb-6 text-slate-700">Core Team</h3>
-          <div className="flex flex-wrap gap-6 justify-center mb-12">
+          <div className="flex flex-wrap gap-4 justify-center mb-12">
             {teamMembers.map((m) => (
-              <Card key={m.name} className="flex flex-col items-center py-6 px-4 shadow-lg hover:shadow-xl transition-shadow w-64 bg-white border border-slate-200">
-                <Avatar className="mb-4 size-24 ring-4 ring-teal-100">
-                  <AvatarImage src={m.img} alt={m.name} />
-                  <AvatarFallback className="font-bold text-lg bg-teal-100 text-teal-700">
-                    {m.name.split(" ").map((n) => n[0]).join("")}
-                  </AvatarFallback>
-                </Avatar>
-                <CardContent className="flex flex-col items-center text-center p-0">
-                  <p className="font-bold text-base mb-0.5">{m.name}</p>
-                  <p className="text-teal-600 font-semibold text-sm mb-1">{m.role}</p>
-                  <p className="text-slate-500 text-xs">{m.focus}</p>
-                </CardContent>
+              <Card key={m.name} className="py-5 px-6 shadow hover:shadow-md transition-shadow w-64 bg-white border border-slate-200">
+                <div className="w-10 h-10 rounded-full bg-teal-100 flex items-center justify-center text-teal-700 font-bold text-base mb-3">
+                  {m.name.split(" ").map((n) => n[0]).join("")}
+                </div>
+                <p className="font-bold text-base mb-0.5">{m.name}</p>
+                <p className="text-teal-600 font-semibold text-sm mb-1">{m.role}</p>
+                <p className="text-slate-500 text-xs leading-relaxed">{m.focus}</p>
               </Card>
             ))}
           </div>
 
           <h3 className="text-xl font-bold text-center mb-6 text-slate-700">Advisors</h3>
-          <div className="flex flex-wrap gap-6 justify-center">
+          <div className="flex flex-wrap gap-4 justify-center">
             {advisors.map((a) => (
-              <Card key={a.name} className="flex flex-col items-center py-6 px-4 shadow-lg hover:shadow-xl transition-shadow w-64 bg-white border border-slate-200">
-                <Avatar className="mb-4 size-24 ring-4 ring-emerald-100">
-                  <AvatarImage src={a.img} alt={a.name} />
-                  <AvatarFallback className="font-bold text-lg bg-emerald-100 text-emerald-700">
-                    {a.name.split(" ").map((n) => n[0]).join("")}
-                  </AvatarFallback>
-                </Avatar>
-                <CardContent className="flex flex-col items-center text-center p-0">
-                  <p className="font-bold text-base mb-0.5">{a.name}</p>
-                  <p className="text-slate-500 text-sm mb-1">{a.role}</p>
-                  <p className="text-teal-600 font-semibold text-xs">{a.focus}</p>
-                </CardContent>
+              <Card key={a.name} className="py-5 px-6 shadow hover:shadow-md transition-shadow w-64 bg-white border border-slate-200">
+                <div className="w-10 h-10 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-700 font-bold text-base mb-3">
+                  {a.name.split(" ").map((n) => n[0]).join("")}
+                </div>
+                <p className="font-bold text-base mb-0.5">{a.name}</p>
+                <p className="text-slate-500 text-sm mb-1">{a.role}</p>
+                <p className="text-teal-600 font-semibold text-xs leading-relaxed">{a.focus}</p>
               </Card>
             ))}
           </div>
@@ -334,12 +323,21 @@ const QHealth = () => {
             className="relative rounded-2xl overflow-hidden shadow-xl border border-slate-200 bg-white"
             onContextMenu={(e) => e.preventDefault()}
           >
-            <iframe
-              src="/projects/q-health-deck.pdf#toolbar=0&navpanes=0&scrollbar=1&view=FitH"
-              title="Q-Health Investor Deck"
-              className="w-full"
-              style={{ height: "680px", border: "none", display: "block" }}
-            />
+            {/* 移动端触摸可滑动包裹层 */}
+            <div
+              style={{
+                WebkitOverflowScrolling: "touch",
+                overflowY: "auto",
+                height: "680px",
+              }}
+            >
+              <iframe
+                src="/projects/q-health-deck.pdf#toolbar=0&navpanes=0&scrollbar=1&view=FitH"
+                title="Q-Health Investor Deck"
+                className="w-full"
+                style={{ height: "100%", minHeight: "680px", border: "none", display: "block" }}
+              />
+            </div>
             {/* Overlay strip that covers Chrome's PDF top-right download button area */}
             <div
               className="absolute top-0 right-0 h-10 w-24 bg-slate-50"
