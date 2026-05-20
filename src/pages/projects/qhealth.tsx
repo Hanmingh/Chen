@@ -104,11 +104,11 @@ const QHealth = () => {
   const [scale, setScale] = useState(1);
   const lastPinchDist = useRef<number | null>(null);
 
-  // 自适应容器宽度
+  // 自适应宽度：取容器宽度和视口宽度的较小值，确保手机不超屏
   const measureWidth = useCallback(() => {
-    if (containerRef.current) {
-      setContainerWidth(containerRef.current.clientWidth);
-    }
+    const vw = window.innerWidth;
+    const cw = containerRef.current?.clientWidth ?? vw;
+    setContainerWidth(Math.min(cw, vw));
   }, []);
 
   useEffect(() => {
