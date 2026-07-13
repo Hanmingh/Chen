@@ -180,6 +180,17 @@ export const currentMembers: TeamMember[] = [
         dribbble:"",
     },
     {
+        id: "luca",
+        name: "Luca de Dios",
+        term: "2026 Jun –",
+        focus: "Liquidity Provider Behavior, Information Risk, Market Microstructure",
+        avatar: "teams/current/luca.jpeg",
+        company: "",
+        linkedin:"https://www.linkedin.com/in/luca-de-dios/",
+        github:"",
+        dribbble:"",
+    },
+    {
         id: "tim",
         name: "Tim, Herrmann",
         term: "2026 Sep –",
