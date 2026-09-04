@@ -37,17 +37,6 @@ export const currentMembers: TeamMember[] = [
         dribbble:"",
     },
     {
-        id: "lanhuong",
-        name: "Lan Huong, Lai",
-        term: "2021 Aug –",
-        focus: "Dynamic Treatment Model, Deep Kernel Learning, Biostatistics, Precision Medicine",
-        avatar: "teams/current/lanhuong.jpg",
-        company: "",
-        linkedin:"https://www.linkedin.com/in/hlhlai/",
-        github:"",
-        dribbble:"",
-    },
-    {
         id: "wenhan",
         name: "Wenhan, Gao",
         term: "2022 Aug –",
@@ -223,10 +212,42 @@ export const currentMembers: TeamMember[] = [
         github:"",
         dribbble:"",
     },
+    {
+        id: "edward",
+        name: "Edward, Yang",
+        term: "2026 Aug – 2027 Feb",
+        focus: "Quantitative finance, financial time series, optimization, and machine learning applications in financial markets",
+        avatar: "teams/current/edward.jpeg",
+        company: "",
+        linkedin:"https://www.linkedin.com/in/edward-jiatong-yang-67b15a23a/",
+        github:"",
+        dribbble:"",
+    },
+    {
+        id: "yifei",
+        name: "Yifei, Lim",
+        term: "2026 Aug –",
+        focus: "Financial Risk Management, Financial Forecasting, and Quantitative Finance",
+        avatar: "teams/current/yifei.jpeg",
+        company: "",
+        linkedin:"https://www.linkedin.com/in/limyifei0906/",
+        github:"",
+        dribbble:"",
+    },
 ];
   
 export const formerMembers: TeamMember[] = [
-    
+    {
+        id: "lanhuong",
+        name: "Lan Huong, Lai",
+        term: "2021 Aug – 2026 Aug",
+        focus: "Dynamic Treatment Model, Deep Kernel Learning, Biostatistics, Precision Medicine",
+        avatar: "teams/current/lanhuong.jpg",
+        company: "",
+        linkedin:"https://www.linkedin.com/in/hlhlai/",
+        github:"",
+        dribbble:"",
+    },
     {
         id: "tilian",
         name: "Tilian, Bourachot",
