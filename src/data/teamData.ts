@@ -234,6 +234,28 @@ export const currentMembers: TeamMember[] = [
         github:"",
         dribbble:"",
     },
+    {
+        id: "wangdong",
+        name: "Wangdong, Ni",
+        term: "2026 Oct –",
+        focus: "AI-Driven Quantitative Trading, Financial Risk Management, Generative AI for Finance",
+        avatar: "teams/current/wangdong.jpeg",
+        company: "",
+        linkedin:"https://www.linkedin.com/in/wangdong-ni-5878a940/",
+        github:"",
+        dribbble:"",
+    },
+    {
+        id: "haining",
+        name: "Haining, An",
+        term: "2026 Oct –",
+        focus: "Reinforcement learning",
+        avatar: "teams/current/haining.jpeg",
+        company: "",
+        linkedin:"https://www.linkedin.com/in/haining-an-03850743a/",
+        github:"",
+        dribbble:"",
+    },
 ];
   
 export const formerMembers: TeamMember[] = [
