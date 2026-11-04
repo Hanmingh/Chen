@@ -256,6 +256,17 @@ export const currentMembers: TeamMember[] = [
         github:"",
         dribbble:"",
     },
+    {
+        id: "renatta",
+        name: "Renatta, Fernandez",
+        term: "2026 Oct –",
+        focus: "Software Engineering, Data Science",
+        avatar: "teams/current/renatta.jpeg",
+        company: "",
+        linkedin:"",
+        github:"",
+        dribbble:"",
+    },
 ];
   
 export const formerMembers: TeamMember[] = [
