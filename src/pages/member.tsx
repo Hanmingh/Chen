@@ -23,6 +23,9 @@ const Member  = () => {
                   <AvatarFallback/>
                 </Avatar>
                 <p className="font-medium">{person.name}</p>
+                {person.company && (
+                  <p className="py-1 text-sm font-bold text-muted-foreground opacity-50">{person.company}</p>
+                )}
                 <p className="py-1 text-sm text-muted-foreground">
                   {person.focus}
                 </p>
